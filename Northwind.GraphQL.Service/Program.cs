@@ -1,8 +1,18 @@
+using Microsoft.AspNetCore.Components;
 using Northwind.GraphQL.Service;
+using Repository;
+using Microsoft.EntityFrameworkCore;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services
+    .AddDbContext<RepositoryContext>(opts => opts.UseSqlServer("Server=CEMIGOGO;Database=Employee22;Trusted_Connection=True;encrypt=false"));
+
 builder.Services
     .AddGraphQLServer()
+    .RegisterDbContext<RepositoryContext>()
     .AddQueryType<Query>();
 
 

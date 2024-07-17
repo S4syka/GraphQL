@@ -4,6 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+      <NoWarn>AD0001</NoWarn>
   </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="HotChocolate.AspNetCore" Version="13.*" />
+    </ItemGroup>
 
 </Project>
